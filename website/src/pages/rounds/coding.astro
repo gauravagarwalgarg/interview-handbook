@@ -1,0 +1,119 @@
+---
+import DocsLayout from "../../layouts/DocsLayout.astro";
+---
+
+<DocsLayout title="Coding & DSA Round" section="Rounds" description="60-minute algorithmic problem-solving assessment with 4-tier scorecard">
+  <h2 id="structure">Round Structure (60 min)</h2>
+  <table>
+    <thead>
+      <tr><th>Time</th><th>Phase</th><th>Purpose</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>0-5 min</td><td>Warm-up</td><td>Introduce yourself, set expectations</td></tr>
+      <tr><td>5-10 min</td><td>Problem Statement</td><td>Present problem, candidate asks clarifying questions</td></tr>
+      <tr><td>10-40 min</td><td>Implementation</td><td>Candidate codes solution, discusses approach</td></tr>
+      <tr><td>40-50 min</td><td>Testing & Optimization</td><td>Walk through test cases, discuss improvements</td></tr>
+      <tr><td>50-60 min</td><td>Follow-ups</td><td>Extensions, edge cases, complexity analysis</td></tr>
+    </tbody>
+  </table>
+
+  <h2 id="scorecard">4-Tier Scorecard</h2>
+  <table>
+    <thead>
+      <tr><th>Dimension</th><th>1 Strong No-Hire</th><th>2 No-Hire</th><th>3 Lean Hire</th><th>4 Strong Hire</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Algorithmic Thinking</strong></td>
+        <td>Cannot identify problem type</td>
+        <td>Identifies pattern but fails to implement</td>
+        <td>Correct approach with minor bugs</td>
+        <td>Optimal approach, clean implementation</td>
+      </tr>
+      <tr>
+        <td><strong>Complexity Analysis</strong></td>
+        <td>Cannot state Big-O</td>
+        <td>States Big-O but incorrect</td>
+        <td>Correct Big-O, cannot optimize</td>
+        <td>Analyzes multiple approaches, picks optimal</td>
+      </tr>
+      <tr>
+        <td><strong>Edge Cases</strong></td>
+        <td>Ignores edge cases entirely</td>
+        <td>Handles 1-2 when prompted</td>
+        <td>Identifies most independently</td>
+        <td>Exhaustive coverage; adversarial inputs</td>
+      </tr>
+      <tr>
+        <td><strong>Code Quality</strong></td>
+        <td>Unreadable; no structure</td>
+        <td>Functional but messy</td>
+        <td>Clean, modular; reasonable naming</td>
+        <td>Production-ready; self-documenting</td>
+      </tr>
+      <tr>
+        <td><strong>Communication</strong></td>
+        <td>Cannot explain thinking</td>
+        <td>Explains only when asked</td>
+        <td>Thinks aloud; structured</td>
+        <td>Drives discussion; explores alternatives</td>
+      </tr>
+      <tr>
+        <td><strong>Testing</strong></td>
+        <td>Cannot verify own code</td>
+        <td>Traces one example when prompted</td>
+        <td>Tests happy path + edge cases</td>
+        <td>Writes formal tests; discusses strategy</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2 id="level-expectations">Level Expectations</h2>
+  <table>
+    <thead>
+      <tr><th>Level</th><th>Expected Performance</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>SDE 1</strong></td><td>Solves Easy in &lt;15min, Medium with hints</td></tr>
+      <tr><td><strong>SDE 2</strong></td><td>Solves Medium cleanly in &lt;25min</td></tr>
+      <tr><td><strong>SDE 3</strong></td><td>Solves Medium in &lt;20min, attempts Hard optimally</td></tr>
+      <tr><td><strong>SDE 4</strong></td><td>Solves Hard, discusses multiple approaches and trade-offs</td></tr>
+    </tbody>
+  </table>
+
+  <h2 id="sample-problems">Sample Problems by Category</h2>
+
+  <h3>Arrays & Hashing</h3>
+  <ul>
+    <li>Two Sum O(n) hash map approach</li>
+    <li>Merge Intervals sort + merge</li>
+    <li>Product of Array Except Self prefix/suffix</li>
+  </ul>
+
+  <h3>Trees & Graphs</h3>
+  <ul>
+    <li>Lowest Common Ancestor recursive DFS</li>
+    <li>Course Schedule topological sort</li>
+    <li>Serialize/Deserialize Binary Tree</li>
+  </ul>
+
+  <h3>Dynamic Programming</h3>
+  <ul>
+    <li>Longest Increasing Subsequence O(n log n)</li>
+    <li>Coin Change bottom-up tabulation</li>
+    <li>Edit Distance 2D DP</li>
+  </ul>
+
+  <h3>Heaps & Stacks</h3>
+  <ul>
+    <li>Merge K Sorted Lists min-heap</li>
+    <li>LRU Cache DLL + HashMap</li>
+    <li>Min Stack auxiliary stack</li>
+  </ul>
+
+  <div class="mt-8 p-4 rounded-lg bg-brand-50 dark:bg-brand-950/30 border border-brand-200 dark:border-brand-800">
+    <p class="text-sm text-brand-800 dark:text-brand-200">
+      <strong>📖 Full question bank:</strong> See the <a href="/questions/dsa">DSA Problems page</a> for 25 complete solutions with complexities and follow-ups.
+    </p>
+  </div>
+</DocsLayout>

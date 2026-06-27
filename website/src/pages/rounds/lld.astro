@@ -1,0 +1,52 @@
+---
+import DocsLayout from "../../layouts/DocsLayout.astro";
+---
+
+<DocsLayout title="Low-Level Design Round" section="Rounds" description="45-60 min OOP design assessment covering SOLID, patterns, and class modeling">
+  <h2 id="overview">Overview</h2>
+  <p>The LLD round tests a candidate's ability to translate requirements into clean, extensible object-oriented designs. Focus is on class relationships, interfaces, and design patterns not system-level architecture.</p>
+
+  <h2 id="structure">Round Structure</h2>
+  <table>
+    <thead><tr><th>Time</th><th>Phase</th><th>What to Observe</th></tr></thead>
+    <tbody>
+      <tr><td>0-5 min</td><td>Problem Introduction</td><td>Does candidate ask clarifying questions?</td></tr>
+      <tr><td>5-15 min</td><td>Requirements Gathering</td><td>Identifies actors, use cases, constraints</td></tr>
+      <tr><td>15-40 min</td><td>Design & Code</td><td>Class hierarchy, patterns, API contracts</td></tr>
+      <tr><td>40-50 min</td><td>Extensibility Discussion</td><td>How would design change with new requirements?</td></tr>
+      <tr><td>50-60 min</td><td>Trade-offs & Alternatives</td><td>Awareness of design trade-offs</td></tr>
+    </tbody>
+  </table>
+
+  <h2 id="scorecard">Scoring Rubric</h2>
+  <table>
+    <thead><tr><th>Dimension</th><th>1</th><th>2</th><th>3</th><th>4</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Requirements</strong></td><td>Jumps to code immediately</td><td>Asks few questions</td><td>Good requirement gathering</td><td>Exhaustive; identifies edge cases</td></tr>
+      <tr><td><strong>Class Design</strong></td><td>God class; no abstraction</td><td>Some separation but tightly coupled</td><td>Clean hierarchy; interfaces used</td><td>Elegant; easily extensible</td></tr>
+      <tr><td><strong>Design Patterns</strong></td><td>No awareness</td><td>Names patterns but misapplies</td><td>Applies 1-2 correctly</td><td>Multiple patterns; justifies choices</td></tr>
+      <tr><td><strong>SOLID Principles</strong></td><td>Violates most</td><td>Follows 1-2 accidentally</td><td>Consciously applies most</td><td>All principles; explains trade-offs</td></tr>
+      <tr><td><strong>Extensibility</strong></td><td>Design breaks with changes</td><td>Requires refactoring for changes</td><td>Handles most extensions cleanly</td><td>Open/Closed; plugin-ready</td></tr>
+    </tbody>
+  </table>
+
+  <h2 id="popular-problems">Popular LLD Problems</h2>
+  <ol>
+    <li>Parking Lot System</li>
+    <li>Elevator Design</li>
+    <li>Snake & Ladder Game</li>
+    <li>Online Bookstore / Library</li>
+    <li>Rate Limiter</li>
+    <li>Pub/Sub Messaging System</li>
+    <li>Splitwise / Expense Tracker</li>
+    <li>Vending Machine</li>
+    <li>Chess Game</li>
+    <li>File System (Linux-style)</li>
+  </ol>
+
+  <div class="mt-8 p-4 rounded-lg bg-brand-50 dark:bg-brand-950/30 border border-brand-200 dark:border-brand-800">
+    <p class="text-sm text-brand-800 dark:text-brand-200">
+      <strong>📖 Full designs:</strong> See <a href="/questions/lld">LLD Problems page</a> for 25 complete designs with class diagrams.
+    </p>
+  </div>
+</DocsLayout>

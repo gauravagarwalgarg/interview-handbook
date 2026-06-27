@@ -1,0 +1,28 @@
+---
+export interface Props {
+  headings: { depth: number; slug: string; text: string }[];
+}
+
+const { headings } = Astro.props;
+const filteredHeadings = headings.filter((h) => h.depth <= 3);
+---
+
+<aside class="hidden xl:block w-64 shrink-0 h-[calc(100vh-4rem)] sticky top-16 overflow-y-auto py-8 pr-4">
+  <div class="border-l-2 border-gray-200 dark:border-gray-700 pl-4">
+    <h4 class="text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-3">
+      On this page
+    </h4>
+    <ul class="space-y-1.5">
+      {filteredHeadings.map((heading) => (
+        <li style={`padding-left: ${(heading.depth - 2) * 0.75}rem`}>
+          <a
+            href={`#${heading.slug}`}
+            class="block text-xs text-gray-500 dark:text-gray-400 hover:text-brand-600 dark:hover:text-brand-400 transition-colors leading-relaxed"
+          >
+            {heading.text}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</aside>

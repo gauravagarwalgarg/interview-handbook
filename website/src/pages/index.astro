@@ -1,0 +1,153 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const domains = [
+  { icon: "🔧", title: "Silicon & Embedded", desc: "FPGA, ASIC, RTOS, DMA, bootloaders, watchdogs", href: "/domains/silicon", color: "from-red-500 to-orange-500" },
+  { icon: "⚙️", title: "C++ & Systems", desc: "Modern C++20, RAII, concurrency, template metaprogramming", href: "/domains/cpp", color: "from-blue-500 to-cyan-500" },
+  { icon: "🐧", title: "Yocto & Linux", desc: "Recipes, layers, BitBake, device drivers, kernel modules", href: "/domains/yocto", color: "from-green-500 to-emerald-500" },
+  { icon: "☁️", title: "Backend & Cloud", desc: "Distributed systems, databases, microservices, Kafka", href: "/domains/backend", color: "from-purple-500 to-violet-500" },
+  { icon: "🚀", title: "CI/CD & DevOps", desc: "GitLab pipelines, Docker, quality gates, OTA deployment", href: "/questions/cicd", color: "from-amber-500 to-yellow-500" },
+  { icon: "🌐", title: "Frontend", desc: "React, state management, rendering, accessibility", href: "/domains/frontend", color: "from-pink-500 to-rose-500" },
+];
+
+const rounds = [
+  { num: "01", title: "Coding & DSA", desc: "Algorithms, data structures, complexity analysis", href: "/rounds/coding" },
+  { num: "02", title: "Low-Level Design", desc: "OOP, SOLID, design patterns, class modeling", href: "/rounds/lld" },
+  { num: "03", title: "High-Level Design", desc: "System architecture, scalability, trade-offs", href: "/rounds/hld" },
+  { num: "04", title: "Infrastructure", desc: "CI/CD, observability, deployment strategies", href: "/rounds/infra" },
+  { num: "05", title: "Behavioral", desc: "STAR method, leadership, conflict resolution", href: "/rounds/behavioral" },
+];
+
+const levels = [
+  { level: "SDE 1", years: "0-2 yrs", desc: "Junior executes defined tasks, learns fundamentals" },
+  { level: "SDE 2", years: "2-5 yrs", desc: "Mid owns features end-to-end, production-quality code" },
+  { level: "SDE 3", years: "5-10 yrs", desc: "Senior drives technical direction, cross-team influence" },
+  { level: "SDE 4", years: "10+ yrs", desc: "Staff organization-wide impact, defines architecture" },
+];
+---
+
+<BaseLayout title="Home" description="From Silicon to Cloud Master Every Technical Interview Round">
+  <!-- Hero -->
+  <section class="relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-brand-950 via-surface-900 to-brand-900"></div>
+    <div class="absolute inset-0 opacity-30">
+      <div class="absolute top-20 left-10 w-72 h-72 bg-brand-500/20 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-20 right-10 w-96 h-96 bg-accent-500/10 rounded-full blur-3xl"></div>
+    </div>
+
+    <div class="relative max-w-6xl mx-auto px-6 py-24 lg:py-36 text-center">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-500/10 border border-brand-500/20 text-brand-300 text-sm font-medium mb-8 animate-fade-in">
+        <span class="w-2 h-2 rounded-full bg-brand-400 animate-pulse"></span>
+        Open Source Interview Platform
+      </div>
+
+      <h1 class="text-4xl sm:text-5xl lg:text-7xl font-bold text-white mb-6 animate-slide-up">
+        From <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-accent-400">Zero</span> to
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-accent-400 to-brand-400">Hero</span>
+      </h1>
+
+      <p class="text-xl text-gray-300 max-w-2xl mx-auto mb-10 animate-slide-up">
+        Silicon to Cloud everything in between. Master technical interviews with structured rubrics, real questions, and calibrated evaluation frameworks.
+      </p>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 animate-slide-up">
+        <a href="/rounds" class="px-8 py-3 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-semibold shadow-lg shadow-brand-500/25 hover:shadow-brand-500/40 transition-all">
+          Start Your Journey →
+        </a>
+        <a href="/profiles" class="px-8 py-3 rounded-xl border border-gray-600 hover:border-brand-400 text-gray-300 hover:text-white font-medium transition-all">
+          Pick Your Profile
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Domain Cards -->
+  <section class="max-w-6xl mx-auto px-6 py-20">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-3">Every Domain Covered</h2>
+      <p class="text-gray-600 dark:text-gray-400">From bare-metal silicon to cloud-native microservices</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {domains.map((d) => (
+        <a href={d.href} class="group glass rounded-2xl p-6 card-hover">
+          <div class={`w-12 h-12 rounded-xl bg-gradient-to-br ${d.color} flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform`}>
+            {d.icon}
+          </div>
+          <h3 class="font-semibold text-gray-900 dark:text-white mb-2">{d.title}</h3>
+          <p class="text-sm text-gray-600 dark:text-gray-400">{d.desc}</p>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <!-- Interview Rounds -->
+  <section class="bg-gray-50 dark:bg-surface-800/50 py-20">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-3">Interview Rounds</h2>
+        <p class="text-gray-600 dark:text-gray-400">Structured 60-minute rounds with scoring rubrics</p>
+      </div>
+
+      <div class="space-y-4">
+        {rounds.map((r) => (
+          <a href={r.href} class="flex items-center gap-6 p-5 glass rounded-xl card-hover group">
+            <span class="text-3xl font-bold text-brand-200 dark:text-brand-800 group-hover:text-brand-400 transition-colors font-mono">
+              {r.num}
+            </span>
+            <div class="flex-1">
+              <h3 class="font-semibold text-gray-900 dark:text-white">{r.title}</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-400">{r.desc}</p>
+            </div>
+            <svg class="w-5 h-5 text-gray-400 group-hover:text-brand-500 group-hover:translate-x-1 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+            </svg>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Level Calibration -->
+  <section class="max-w-6xl mx-auto px-6 py-20">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-3">Level Calibration</h2>
+      <p class="text-gray-600 dark:text-gray-400">Know exactly what's expected at each engineering level</p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      {levels.map((l, i) => (
+        <div class="glass rounded-xl p-5 text-center card-hover">
+          <div class="w-10 h-10 mx-auto rounded-full bg-gradient-to-br from-brand-500 to-brand-700 flex items-center justify-center text-white font-bold text-sm mb-3">
+            {i + 1}
+          </div>
+          <h3 class="font-bold text-gray-900 dark:text-white">{l.level}</h3>
+          <p class="text-xs text-brand-600 dark:text-brand-400 font-medium mb-2">{l.years}</p>
+          <p class="text-xs text-gray-600 dark:text-gray-400">{l.desc}</p>
+        </div>
+      ))}
+    </div>
+
+    <div class="text-center mt-8">
+      <a href="/rubrics/levels" class="text-brand-600 dark:text-brand-400 font-medium hover:underline">
+        View full calibration matrix →
+      </a>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-gradient-to-r from-brand-600 to-brand-800 py-16">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold text-white mb-4">Ready to become an interview expert?</h2>
+      <p class="text-brand-100 mb-8">Whether you're preparing as a candidate or calibrating as an interviewer we've got you covered.</p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="/rounds/coding" class="px-8 py-3 rounded-xl bg-white text-brand-700 font-semibold hover:bg-brand-50 transition-colors">
+          Start with Coding Round
+        </a>
+        <a href="/questions/dsa" class="px-8 py-3 rounded-xl border border-white/30 text-white font-medium hover:bg-white/10 transition-colors">
+          Browse 250+ Questions
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

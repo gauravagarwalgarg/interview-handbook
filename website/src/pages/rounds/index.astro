@@ -1,0 +1,90 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const rounds = [
+  {
+    num: "01",
+    title: "Coding & DSA",
+    duration: "60 min",
+    desc: "Algorithms, data structures, complexity analysis. Test problem-solving under pressure with real LeetCode-style questions.",
+    href: "/rounds/coding",
+    skills: ["Arrays", "Trees", "Graphs", "DP", "Heap"],
+  },
+  {
+    num: "02",
+    title: "Low-Level Design",
+    duration: "45-60 min",
+    desc: "Object-oriented design, SOLID principles, design patterns. Model real systems with clean class hierarchies.",
+    href: "/rounds/lld",
+    skills: ["OOP", "SOLID", "Patterns", "UML", "APIs"],
+  },
+  {
+    num: "03",
+    title: "High-Level Design",
+    duration: "45-60 min",
+    desc: "Distributed systems, scalability, reliability. Architect systems handling millions of users.",
+    href: "/rounds/hld",
+    skills: ["Scaling", "Databases", "Caching", "Queues", "CDN"],
+  },
+  {
+    num: "04",
+    title: "Infrastructure & CI/CD",
+    duration: "45 min",
+    desc: "Build pipelines, containerization, observability, deployment strategies, quality gates.",
+    href: "/rounds/infra",
+    skills: ["Docker", "K8s", "GitLab CI", "Terraform", "Monitoring"],
+  },
+  {
+    num: "05",
+    title: "Behavioral",
+    duration: "45 min",
+    desc: "STAR method, leadership principles, conflict resolution, growth mindset.",
+    href: "/rounds/behavioral",
+    skills: ["STAR", "Leadership", "Conflict", "Growth", "Empathy"],
+  },
+];
+---
+
+<BaseLayout title="Interview Rounds" description="Structured 60-minute interview rounds with scoring rubrics for every engineering level">
+  <section class="max-w-4xl mx-auto px-6 py-16">
+    <header class="mb-12">
+      <h1 class="text-4xl font-bold text-gray-900 dark:text-white mb-4">Interview Rounds</h1>
+      <p class="text-lg text-gray-600 dark:text-gray-400">
+        Each round is a structured 45-60 minute assessment with clear evaluation criteria. Use these as an interviewer to calibrate, or as a candidate to prepare.
+      </p>
+    </header>
+
+    <div class="space-y-6">
+      {rounds.map((r) => (
+        <a href={r.href} class="block glass rounded-2xl p-6 card-hover group">
+          <div class="flex items-start gap-5">
+            <div class="shrink-0 w-14 h-14 rounded-xl bg-gradient-to-br from-brand-500 to-brand-700 flex items-center justify-center text-white font-bold text-lg font-mono">
+              {r.num}
+            </div>
+            <div class="flex-1 min-w-0">
+              <div class="flex items-center gap-3 mb-1">
+                <h2 class="font-bold text-xl text-gray-900 dark:text-white group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors">
+                  {r.title}
+                </h2>
+                <span class="text-xs font-medium px-2 py-0.5 rounded-full bg-brand-100 dark:bg-brand-900/40 text-brand-700 dark:text-brand-300">
+                  {r.duration}
+                </span>
+              </div>
+              <p class="text-sm text-gray-600 dark:text-gray-400 mb-3">{r.desc}</p>
+              <div class="flex flex-wrap gap-2">
+                {r.skills.map((s) => (
+                  <span class="text-xs px-2 py-0.5 rounded bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
+                    {s}
+                  </span>
+                ))}
+              </div>
+            </div>
+            <svg class="w-5 h-5 text-gray-400 group-hover:text-brand-500 group-hover:translate-x-1 transition-all shrink-0 mt-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+            </svg>
+          </div>
+        </a>
+      ))}
+    </div>
+  </section>
+</BaseLayout>

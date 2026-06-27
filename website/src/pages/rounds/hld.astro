@@ -1,0 +1,46 @@
+---
+import DocsLayout from "../../layouts/DocsLayout.astro";
+---
+
+<DocsLayout title="High-Level Design Round" section="Rounds" description="System design assessment covering distributed systems, scalability, and architectural trade-offs">
+  <h2 id="overview">Overview</h2>
+  <p>The HLD round assesses a candidate's ability to design large-scale distributed systems. Expect to whiteboard architecture diagrams, discuss trade-offs between consistency and availability, and reason about failure modes.</p>
+
+  <h2 id="structure">Round Structure (60 min)</h2>
+  <table>
+    <thead><tr><th>Time</th><th>Phase</th><th>Signals</th></tr></thead>
+    <tbody>
+      <tr><td>0-5 min</td><td>Problem & Scope</td><td>Asks about scale, users, SLAs</td></tr>
+      <tr><td>5-15 min</td><td>High-Level Architecture</td><td>Identifies core components quickly</td></tr>
+      <tr><td>15-35 min</td><td>Deep Dive</td><td>Data model, API contracts, storage choices</td></tr>
+      <tr><td>35-50 min</td><td>Scaling & Reliability</td><td>Sharding, replication, failure handling</td></tr>
+      <tr><td>50-60 min</td><td>Trade-offs & Monitoring</td><td>CAP awareness, observability</td></tr>
+    </tbody>
+  </table>
+
+  <h2 id="scorecard">Scoring Rubric</h2>
+  <table>
+    <thead><tr><th>Dimension</th><th>1</th><th>2</th><th>3</th><th>4</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Scoping</strong></td><td>No questions; wrong assumptions</td><td>Some clarification</td><td>Good scoping; identifies MVP</td><td>Expert scoping; phased approach</td></tr>
+      <tr><td><strong>Architecture</strong></td><td>Monolith with no reasoning</td><td>Basic client-server</td><td>Appropriate microservices split</td><td>Elegant; justified component boundaries</td></tr>
+      <tr><td><strong>Data Design</strong></td><td>No data model discussion</td><td>Basic schema, wrong DB choice</td><td>Good schema + justified DB selection</td><td>Polyglot persistence; access pattern driven</td></tr>
+      <tr><td><strong>Scalability</strong></td><td>No awareness of scale</td><td>Mentions caching/LB</td><td>Concrete sharding + replication strategy</td><td>Back-of-envelope math; bottleneck analysis</td></tr>
+      <tr><td><strong>Reliability</strong></td><td>No failure discussion</td><td>Acknowledges failures</td><td>Discusses retries, circuit breakers</td><td>Chaos engineering mindset; graceful degradation</td></tr>
+    </tbody>
+  </table>
+
+  <h2 id="popular-problems">Popular HLD Problems</h2>
+  <ol>
+    <li>Design URL Shortener (TinyURL)</li>
+    <li>Design Twitter / News Feed</li>
+    <li>Design WhatsApp / Chat System</li>
+    <li>Design YouTube / Video Streaming</li>
+    <li>Design Uber / Ride Sharing</li>
+    <li>Design Notification System</li>
+    <li>Design Rate Limiter (distributed)</li>
+    <li>Design Search Autocomplete</li>
+    <li>Design Distributed Cache</li>
+    <li>Design Payment System</li>
+  </ol>
+</DocsLayout>

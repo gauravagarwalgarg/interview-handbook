@@ -1,0 +1,37 @@
+---
+import DocsLayout from "../../layouts/DocsLayout.astro";
+---
+<DocsLayout title="C++ Coding & Output Questions" section="Question Banks" description="30 tricky C++ questions covering virtual dispatch, object slicing, move semantics, and undefined behavior">
+  <h2 id="q1">Q1: What does this print?</h2>
+  <pre><code class="language-cpp">#include &lt;iostream&gt;
+struct Base {"{"}
+    virtual void foo() {"{"} std::cout &lt;&lt; "Base\\n"; {"}"}
+    ~Base() {"{"} foo(); {"}"} // Non-virtual destructor calling virtual
+{"}"};
+struct Derived : Base {"{"}
+    void foo() override {"{"} std::cout &lt;&lt; "Derived\\n"; {"}"}
+{"}"};
+int main() {"{"} Derived d; {"}"}</code></pre>
+  <p><strong>Answer:</strong> Prints "Base" during destruction, the dynamic type reverts to the current class being destroyed. Virtual dispatch in destructors calls the base version.</p>
+
+  <h2 id="q2">Q2: Move Semantics Trap</h2>
+  <pre><code class="language-cpp">std::string a = "hello";
+std::string b = std::move(a);
+std::cout &lt;&lt; a.size();  // What value?</code></pre>
+  <p><strong>Answer:</strong> Implementation-defined but valid. After move, <code>a</code> is in a valid-but-unspecified state. Most implementations: 0.</p>
+
+  <h2 id="q3">Q3: RAII and Exception Safety</h2>
+  <p><strong>Question:</strong> Design a thread-safe singleton using RAII that is exception-safe during construction.</p>
+  <p><strong>Expected:</strong> Meyer's Singleton with static local (C++11 guarantees thread-safe initialization). Discuss double-checked locking anti-pattern.</p>
+
+  <h2 id="more">Topics Covered</h2>
+  <ul>
+    <li>Virtual dispatch and vtable mechanics</li>
+    <li>Object slicing and polymorphic containers</li>
+    <li>Smart pointer ownership semantics</li>
+    <li>Template metaprogramming (SFINAE, concepts)</li>
+    <li>Memory ordering and atomics</li>
+    <li>Constexpr evaluation</li>
+    <li>Lambda capture pitfalls</li>
+  </ul>
+</DocsLayout>

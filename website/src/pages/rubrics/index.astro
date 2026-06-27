@@ -1,0 +1,59 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const rubrics = [
+  { title: "Level Calibration (SDE 1→4)", desc: "Expectations, signals, and red flags for each engineering level", href: "/rubrics/levels", icon: "📊" },
+  { title: "Coding Round Rubric", desc: "4-tier scorecard for algorithmic problem-solving", href: "/rubrics/coding", icon: "💻" },
+  { title: "LLD Round Rubric", desc: "Object-oriented design scoring guide", href: "/rubrics/lld", icon: "🏗️" },
+  { title: "HLD Round Rubric", desc: "System design assessment criteria", href: "/rubrics/hld", icon: "🌐" },
+  { title: "Feedback Template", desc: "Copy-paste post-interview writeup for debrief", href: "/rubrics/feedback", icon: "📝" },
+];
+---
+
+<BaseLayout title="Rubrics & Evaluation" description="Enterprise-grade evaluation frameworks for consistent, fair hiring decisions">
+  <section class="max-w-4xl mx-auto px-6 py-16">
+    <header class="mb-12">
+      <h1 class="text-4xl font-bold text-gray-900 dark:text-white mb-4">Rubrics & Evaluation</h1>
+      <p class="text-lg text-gray-600 dark:text-gray-400">
+        Standardized scoring frameworks that prevent over-hiring and under-hiring. Every interviewer calibrates against the same bar.
+      </p>
+
+      <div class="mt-6 p-4 rounded-lg bg-brand-50 dark:bg-brand-950/30 border border-brand-200 dark:border-brand-800">
+        <h3 class="font-semibold text-brand-800 dark:text-brand-200 mb-2">Universal Scoring Scale</h3>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-2 text-sm">
+          <div class="text-center p-2 rounded bg-red-50 dark:bg-red-950/30">
+            <div class="font-bold text-red-700 dark:text-red-300">1</div>
+            <div class="text-red-600 dark:text-red-400">Strong No-Hire</div>
+          </div>
+          <div class="text-center p-2 rounded bg-orange-50 dark:bg-orange-950/30">
+            <div class="font-bold text-orange-700 dark:text-orange-300">2</div>
+            <div class="text-orange-600 dark:text-orange-400">No-Hire</div>
+          </div>
+          <div class="text-center p-2 rounded bg-green-50 dark:bg-green-950/30">
+            <div class="font-bold text-green-700 dark:text-green-300">3</div>
+            <div class="text-green-600 dark:text-green-400">Lean Hire</div>
+          </div>
+          <div class="text-center p-2 rounded bg-emerald-50 dark:bg-emerald-950/30">
+            <div class="font-bold text-emerald-700 dark:text-emerald-300">4</div>
+            <div class="text-emerald-600 dark:text-emerald-400">Strong Hire</div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="space-y-4">
+      {rubrics.map((r) => (
+        <a href={r.href} class="flex items-center gap-4 p-5 glass rounded-xl card-hover group">
+          <span class="text-2xl">{r.icon}</span>
+          <div class="flex-1">
+            <h2 class="font-semibold text-gray-900 dark:text-white group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors">{r.title}</h2>
+            <p class="text-sm text-gray-600 dark:text-gray-400">{r.desc}</p>
+          </div>
+          <svg class="w-5 h-5 text-gray-400 group-hover:text-brand-500 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+          </svg>
+        </a>
+      ))}
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,68 @@
+---
+import DocsLayout from "../../layouts/DocsLayout.astro";
+---
+<DocsLayout title="Level Calibration Matrix" section="Rubrics" description="SDE 1 → SDE 4 expectations, signals, and red flags for calibrated hiring decisions">
+  <h2 id="sde1">SDE 1 (Junior) 0-2 Years</h2>
+  <table>
+    <thead><tr><th>Dimension</th><th>Expected Signal</th></tr></thead>
+    <tbody>
+      <tr><td>Scope</td><td>Executes well-defined tasks within a component</td></tr>
+      <tr><td>Coding</td><td>Implements correct solution with guidance; handles happy path</td></tr>
+      <tr><td>Design</td><td>N/A (not assessed)</td></tr>
+      <tr><td>Testing</td><td>Writes basic unit tests; understands why testing matters</td></tr>
+      <tr><td>Communication</td><td>Can explain approach; asks clarifying questions</td></tr>
+      <tr><td>Autonomy</td><td>Needs direction on what to build; executes independently once clear</td></tr>
+    </tbody>
+  </table>
+  <p><strong>Strong Hire:</strong> Solves Easy in &lt;15min, Medium with hints. Clean code without being told.</p>
+  <p><strong>Red Flags:</strong> Cannot implement basic data structures. Code doesn't compile. Cannot trace through own code.</p>
+
+  <hr />
+
+  <h2 id="sde2">SDE 2 (Mid-Level) 2-5 Years</h2>
+  <table>
+    <thead><tr><th>Dimension</th><th>Expected Signal</th></tr></thead>
+    <tbody>
+      <tr><td>Scope</td><td>Owns features end-to-end; translates requirements to implementation</td></tr>
+      <tr><td>Coding</td><td>Production-quality code; handles edge cases proactively</td></tr>
+      <tr><td>Design (LLD)</td><td>Designs classes/interfaces for a single service; SOLID</td></tr>
+      <tr><td>Testing</td><td>Comprehensive tests; understands mocking, integration testing</td></tr>
+      <tr><td>Communication</td><td>Clearly explains trade-offs; documents decisions</td></tr>
+      <tr><td>Autonomy</td><td>Self-directed; breaks down ambiguous problems</td></tr>
+    </tbody>
+  </table>
+  <p><strong>Strong Hire:</strong> Solves Medium cleanly in &lt;25min. Proactively discusses edge cases and testability.</p>
+  <p><strong>Red Flags:</strong> Cannot design beyond a single function. No concurrency awareness. No testing attitude.</p>
+
+  <hr />
+
+  <h2 id="sde3">SDE 3 (Senior) 5-10 Years</h2>
+  <table>
+    <thead><tr><th>Dimension</th><th>Expected Signal</th></tr></thead>
+    <tbody>
+      <tr><td>Scope</td><td>Drives technical direction; cross-team influence</td></tr>
+      <tr><td>Coding</td><td>Elegant, maintainable solutions; performance-conscious</td></tr>
+      <tr><td>Design (HLD)</td><td>Designs multi-service architectures; infrastructure trade-offs</td></tr>
+      <tr><td>Testing</td><td>Defines testing strategy; chaos engineering awareness</td></tr>
+      <tr><td>Communication</td><td>Mentors others; writes RFCs; presents to leadership</td></tr>
+      <tr><td>Autonomy</td><td>Identifies problems before they're assigned; proposes solutions</td></tr>
+    </tbody>
+  </table>
+  <p><strong>Strong Hire:</strong> Designs a complete system with appropriate trade-offs. Demonstrates cross-team collaboration.</p>
+  <p><strong>Red Flags:</strong> Cannot think beyond a single service. No mentoring experience. Avoids discussing failures.</p>
+
+  <hr />
+
+  <h2 id="sde4">SDE 4 (Staff) 10+ Years</h2>
+  <table>
+    <thead><tr><th>Dimension</th><th>Expected Signal</th></tr></thead>
+    <tbody>
+      <tr><td>Scope</td><td>Organization-wide impact; defines technical strategy</td></tr>
+      <tr><td>Coding</td><td>Sets coding standards; reviews critical systems</td></tr>
+      <tr><td>Design</td><td>Multi-system architecture; long-term technical vision</td></tr>
+      <tr><td>Testing</td><td>Quality culture; production readiness reviews</td></tr>
+      <tr><td>Communication</td><td>Influences org direction; external thought leadership</td></tr>
+      <tr><td>Autonomy</td><td>Creates the roadmap; unblocks entire teams</td></tr>
+    </tbody>
+  </table>
+</DocsLayout>

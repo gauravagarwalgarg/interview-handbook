@@ -1,0 +1,32 @@
+---
+import DocsLayout from "../../layouts/DocsLayout.astro";
+---
+
+<DocsLayout title="Infrastructure & CI/CD Round" section="Rounds" description="DevOps, observability, and deployment strategies assessment">
+  <h2 id="overview">Overview</h2>
+  <p>This round evaluates a candidate's ability to build, deploy, and maintain production systems. Covers CI/CD pipelines, containerization, infrastructure-as-code, monitoring, and incident response.</p>
+
+  <h2 id="scorecard">Scoring Rubric</h2>
+  <table>
+    <thead><tr><th>Dimension</th><th>1</th><th>2</th><th>3</th><th>4</th></tr></thead>
+    <tbody>
+      <tr><td><strong>CI/CD</strong></td><td>No pipeline experience</td><td>Basic linear pipeline</td><td>Multi-stage with quality gates</td><td>Advanced: matrix builds, caching, artifacts</td></tr>
+      <tr><td><strong>Containers</strong></td><td>Cannot explain Docker basics</td><td>Basic Dockerfile</td><td>Multi-stage builds, security scanning</td><td>K8s orchestration, service mesh</td></tr>
+      <tr><td><strong>IaC</strong></td><td>Manual deployments</td><td>Basic scripts</td><td>Terraform/CloudFormation modules</td><td>GitOps, drift detection, blast radius control</td></tr>
+      <tr><td><strong>Observability</strong></td><td>No monitoring</td><td>Basic logs</td><td>Logs + metrics + alerting</td><td>Full observability: traces, SLOs, dashboards</td></tr>
+      <tr><td><strong>Incident Response</strong></td><td>No process</td><td>Ad-hoc debugging</td><td>Structured triage, runbooks</td><td>Blameless postmortems, chaos engineering</td></tr>
+    </tbody>
+  </table>
+
+  <h2 id="topics">Key Topics</h2>
+  <ul>
+    <li>GitLab CI/CD pipeline design with quality gates</li>
+    <li>Docker multi-stage builds and image optimization</li>
+    <li>Kubernetes deployments, services, ingress</li>
+    <li>Terraform modules and state management</li>
+    <li>Blue-green and canary deployment strategies</li>
+    <li>SonarQube integration and code coverage gates</li>
+    <li>Log aggregation (ELK/Loki) and metric collection (Prometheus)</li>
+    <li>SLA/SLO definition and error budget management</li>
+  </ul>
+</DocsLayout>

@@ -1,0 +1,47 @@
+---
+import DocsLayout from "../../layouts/DocsLayout.astro";
+---
+<DocsLayout title="Backend & Cloud" section="Domain Deep Dives" description="Distributed systems, databases, caching, APIs, microservices everything for backend interviews">
+  <h2 id="distributed">Distributed Systems</h2>
+  <table>
+    <thead><tr><th>#</th><th>Question</th><th>Level</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>How would you ensure exactly-once message processing in a distributed queue?</td><td>SDE 3</td></tr>
+      <tr><td>2</td><td>Explain the CAP theorem with a real-world example. When would you choose AP over CP?</td><td>SDE 2</td></tr>
+      <tr><td>3</td><td>How do you design a system to handle 100K writes/sec with strong consistency?</td><td>SDE 3-4</td></tr>
+      <tr><td>4</td><td>What happens when a network partition occurs in a Kafka cluster?</td><td>SDE 3</td></tr>
+    </tbody>
+  </table>
+
+  <h2 id="databases">Databases</h2>
+  <table>
+    <thead><tr><th>#</th><th>Question</th><th>Level</th></tr></thead>
+    <tbody>
+      <tr><td>5</td><td>When would you choose a document store over a relational DB?</td><td>SDE 2</td></tr>
+      <tr><td>6</td><td>Explain database sharding strategies and their trade-offs.</td><td>SDE 3</td></tr>
+      <tr><td>7</td><td>How do you handle schema migrations on a database with 99.99% uptime SLA?</td><td>SDE 3</td></tr>
+    </tbody>
+  </table>
+
+  <h2 id="caching">Caching</h2>
+  <table>
+    <thead><tr><th>#</th><th>Question</th><th>Level</th></tr></thead>
+    <tbody>
+      <tr><td>8</td><td>Explain cache invalidation strategies. When does each fail?</td><td>SDE 2-3</td></tr>
+      <tr><td>9</td><td>Design a multi-layer caching strategy for a high-traffic e-commerce site.</td><td>SDE 3</td></tr>
+    </tbody>
+  </table>
+
+  <h2 id="api">API Design & Microservices</h2>
+  <table>
+    <thead><tr><th>#</th><th>Question</th><th>Level</th></tr></thead>
+    <tbody>
+      <tr><td>10</td><td>How do you design a REST API that supports backward compatibility?</td><td>SDE 2</td></tr>
+      <tr><td>11</td><td>Explain rate limiting algorithms and when to use each.</td><td>SDE 2-3</td></tr>
+      <tr><td>12</td><td>Compare Kafka vs RabbitMQ vs SQS. When would you pick each?</td><td>SDE 2-3</td></tr>
+      <tr><td>13</td><td>How do you implement the Saga pattern for distributed transactions?</td><td>SDE 3</td></tr>
+      <tr><td>14</td><td>How do you handle service discovery and load balancing?</td><td>SDE 2-3</td></tr>
+      <tr><td>15</td><td>Describe the circuit breaker pattern. Implement the state machine.</td><td>SDE 2</td></tr>
+    </tbody>
+  </table>
+</DocsLayout>

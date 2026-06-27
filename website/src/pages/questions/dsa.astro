@@ -1,0 +1,99 @@
+---
+import DocsLayout from "../../layouts/DocsLayout.astro";
+---
+
+<DocsLayout title="DSA Coding Problems" section="Question Banks" description="25 must-know problems with complete solutions, complexities, and follow-ups">
+
+  <h2 id="p1">P1: Two Sum Hash Map O(n)</h2>
+  <p><strong>Problem:</strong> Given array of integers and target, return indices of two numbers that add to target.</p>
+  <p><strong>Approach:</strong> Single-pass hash map. For each number, check if complement exists.</p>
+  <pre><code class="language-python">def two_sum(nums, target):
+    seen = {"{"}{"}"} 
+    for i, num in enumerate(nums):
+        complement = target - num
+        if complement in seen:
+            return [seen[complement], i]
+        seen[num] = i
+    return []</code></pre>
+  <p><strong>Complexity:</strong> O(n) time, O(n) space.</p>
+  <p><strong>Follow-up:</strong> What if the array is sorted? → Two pointers O(n) time O(1) space.</p>
+
+  <hr />
+
+  <h2 id="p2">P2: Merge Intervals Sort + Merge</h2>
+  <p><strong>Problem:</strong> Given array of intervals, merge all overlapping intervals.</p>
+  <p><strong>Approach:</strong> Sort by start. Iterate and merge if current overlaps with last merged.</p>
+  <pre><code class="language-python">def merge(intervals):
+    intervals.sort(key=lambda x: x[0])
+    merged = [intervals[0]]
+    for start, end in intervals[1:]:
+        if start &lt;= merged[-1][1]:
+            merged[-1][1] = max(merged[-1][1], end)
+        else:
+            merged.append([start, end])
+    return merged</code></pre>
+  <p><strong>Complexity:</strong> O(n log n) time, O(n) space.</p>
+
+  <hr />
+
+  <h2 id="p3">P3: LRU Cache DLL + Hash Map</h2>
+  <p><strong>Problem:</strong> Implement LRU cache with O(1) get and put.</p>
+  <pre><code class="language-python">from collections import OrderedDict
+
+class LRUCache:
+    def __init__(self, capacity):
+        self.cache = OrderedDict()
+        self.cap = capacity
+
+    def get(self, key):
+        if key not in self.cache:
+            return -1
+        self.cache.move_to_end(key)
+        return self.cache[key]
+
+    def put(self, key, value):
+        if key in self.cache:
+            self.cache.move_to_end(key)
+        self.cache[key] = value
+        if len(self.cache) &gt; self.cap:
+            self.cache.popitem(last=False)</code></pre>
+
+  <hr />
+
+  <h2 id="p4">P4: Merge K Sorted Lists Min-Heap</h2>
+  <p><strong>Problem:</strong> Given k sorted linked lists, merge into one sorted list.</p>
+  <p><strong>Approach:</strong> Min-heap of size k tracking smallest across all lists. Pop min, push its next.</p>
+  <p><strong>Complexity:</strong> O(N log k) time, O(k) space.</p>
+  <p><strong>Follow-up:</strong> What if lists are on different machines? (distributed merge)</p>
+
+  <hr />
+
+  <h2 id="p5">P5: Longest Increasing Subsequence O(n log n)</h2>
+  <p><strong>Problem:</strong> Find length of longest strictly increasing subsequence.</p>
+  <p><strong>Approach:</strong> Patience sorting with binary search. Maintain tails array.</p>
+  <pre><code class="language-python">import bisect
+
+def length_of_lis(nums):
+    tails = []
+    for num in nums:
+        pos = bisect.bisect_left(tails, num)
+        if pos == len(tails):
+            tails.append(num)
+        else:
+            tails[pos] = num
+    return len(tails)</code></pre>
+  <p><strong>Complexity:</strong> O(n log n) time, O(n) space.</p>
+
+  <hr />
+
+  <h2 id="more">More Problems</h2>
+  <p>This page shows the top 5. The full bank includes 25 problems covering:</p>
+  <ul>
+    <li>Sliding Window (Max Subarray, Minimum Window Substring)</li>
+    <li>Binary Search (Search Rotated Array, Median of Two Sorted Arrays)</li>
+    <li>Graph (Dijkstra, Union-Find, Topological Sort)</li>
+    <li>Trees (Serialize/Deserialize, Morris Traversal)</li>
+    <li>Advanced DP (Knapsack variants, Palindrome Partitioning)</li>
+    <li>Trie (Word Search II, Autocomplete)</li>
+  </ul>
+</DocsLayout>

@@ -1,0 +1,83 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const profiles = [
+  {
+    title: "Backend Engineer",
+    icon: "☁️",
+    rounds: ["Coding/DSA", "HLD (Distributed Systems)", "LLD", "Behavioral"],
+    focus: "Distributed systems, databases, APIs, microservices",
+    href: "/domains/backend",
+  },
+  {
+    title: "Embedded / Silicon Engineer",
+    icon: "🔧",
+    rounds: ["C++ Deep Dive", "Embedded Linux & Protocols", "Yocto Platform", "Design Pattern Exercise"],
+    focus: "FPGA, RTOS, DMA, device drivers, bootloaders",
+    href: "/domains/silicon",
+  },
+  {
+    title: "Frontend Engineer",
+    icon: "🎨",
+    rounds: ["Coding/DSA", "UI System Design", "Frontend Deep Dive", "Behavioral"],
+    focus: "React, rendering, state management, accessibility",
+    href: "/domains/frontend",
+  },
+  {
+    title: "Platform / DevOps Engineer",
+    icon: "🚀",
+    rounds: ["Coding/DSA", "Infrastructure Design", "CI/CD Pipeline", "Behavioral"],
+    focus: "Kubernetes, Terraform, observability, SRE practices",
+    href: "/rounds/infra",
+  },
+  {
+    title: "Full-Stack Engineer",
+    icon: "🌐",
+    rounds: ["Coding/DSA", "HLD", "LLD", "Behavioral"],
+    focus: "End-to-end system ownership, API design, databases",
+    href: "/domains/backend",
+  },
+  {
+    title: "Systems / OS Engineer",
+    icon: "🐧",
+    rounds: ["C/C++ Coding", "Linux Kernel & Networking", "Systems Design", "Behavioral"],
+    focus: "TCP/UDP, sockets, virtual memory, scheduling, drivers",
+    href: "/domains/networking",
+  },
+];
+---
+
+<BaseLayout title="Role Profiles" description="Pick your target role to get a customized interview preparation path">
+  <section class="max-w-5xl mx-auto px-6 py-16">
+    <header class="mb-12">
+      <h1 class="text-4xl font-bold text-gray-900 dark:text-white mb-4">Role Profiles</h1>
+      <p class="text-lg text-gray-600 dark:text-gray-400">
+        Different roles have different interview loops. Pick your target profile to see which rounds you'll face and what to focus on.
+      </p>
+    </header>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {profiles.map((p) => (
+        <a href={p.href} class="glass rounded-2xl p-6 card-hover group">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="text-3xl">{p.icon}</span>
+            <h2 class="font-bold text-xl text-gray-900 dark:text-white group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors">
+              {p.title}
+            </h2>
+          </div>
+          <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">{p.focus}</p>
+          <div class="space-y-1">
+            {p.rounds.map((r, i) => (
+              <div class="flex items-center gap-2 text-xs text-gray-500 dark:text-gray-400">
+                <span class="w-5 h-5 rounded-full bg-brand-100 dark:bg-brand-900/40 text-brand-700 dark:text-brand-300 flex items-center justify-center font-mono font-bold">
+                  {i + 1}
+                </span>
+                {r}
+              </div>
+            ))}
+          </div>
+        </a>
+      ))}
+    </div>
+  </section>
+</BaseLayout>

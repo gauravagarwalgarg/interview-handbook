@@ -1,0 +1,91 @@
+---
+export interface Props {
+  currentSection?: string;
+}
+
+const { currentSection } = Astro.props;
+
+const navigation = [
+  {
+    title: "Getting Started",
+    items: [
+      { label: "Overview", href: "/" },
+      { label: "Interview Flow", href: "/rounds" },
+      { label: "Profiles", href: "/profiles" },
+    ],
+  },
+  {
+    title: "Rounds",
+    items: [
+      { label: "Coding & DSA", href: "/rounds/coding" },
+      { label: "Low-Level Design", href: "/rounds/lld" },
+      { label: "High-Level Design", href: "/rounds/hld" },
+      { label: "Infra & CI/CD", href: "/rounds/infra" },
+      { label: "Behavioral", href: "/rounds/behavioral" },
+    ],
+  },
+  {
+    title: "Question Banks",
+    items: [
+      { label: "DSA (25 Problems)", href: "/questions/dsa" },
+      { label: "C++ Coding", href: "/questions/cpp" },
+      { label: "Python Coding", href: "/questions/python" },
+      { label: "Go Coding", href: "/questions/golang" },
+      { label: "Java Coding", href: "/questions/java" },
+      { label: "LLD Problems", href: "/questions/lld" },
+      { label: "HLD Systems", href: "/questions/hld" },
+      { label: "CI/CD & DevOps", href: "/questions/cicd" },
+    ],
+  },
+  {
+    title: "Domain Deep Dives",
+    items: [
+      { label: "Backend & Cloud", href: "/domains/backend" },
+      { label: "Silicon & Embedded", href: "/domains/silicon" },
+      { label: "Frontend", href: "/domains/frontend" },
+      { label: "Networking & OS", href: "/domains/networking" },
+      { label: "C++ Architecture", href: "/domains/cpp" },
+      { label: "Yocto & Linux", href: "/domains/yocto" },
+    ],
+  },
+  {
+    title: "Rubrics & Evaluation",
+    items: [
+      { label: "Level Calibration", href: "/rubrics/levels" },
+      { label: "Coding Rubric", href: "/rubrics/coding" },
+      { label: "LLD Rubric", href: "/rubrics/lld" },
+      { label: "HLD Rubric", href: "/rubrics/hld" },
+      { label: "Feedback Template", href: "/rubrics/feedback" },
+    ],
+  },
+];
+---
+
+<aside class="hidden lg:block w-72 shrink-0 border-r border-gray-200 dark:border-gray-700/50 h-[calc(100vh-4rem)] sticky top-16 overflow-y-auto py-6 px-4">
+  <nav class="space-y-6">
+    {navigation.map((group) => (
+      <div>
+        <h3 class="text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2 px-3">
+          {group.title}
+        </h3>
+        <ul class="space-y-0.5">
+          {group.items.map((item) => (
+            <li>
+              <a
+                href={item.href}
+                class:list={[
+                  "block px-3 py-1.5 rounded-md text-sm transition-colors",
+                  currentSection === item.label
+                    ? "bg-brand-100 dark:bg-brand-950/40 text-brand-700 dark:text-brand-300 font-medium"
+                    : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800/50",
+                ]}
+              >
+                {item.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    ))}
+  </nav>
+</aside>

@@ -1,0 +1,54 @@
+---
+import DocsLayout from "../../layouts/DocsLayout.astro";
+---
+<DocsLayout title="Silicon & Embedded Systems" section="Domain Deep Dives" description="FPGA, ASIC, RTOS, DMA, bootloaders, watchdogs embedded systems interview questions">
+  <h2 id="fpga">FPGA & ASIC Design</h2>
+  <table>
+    <thead><tr><th>#</th><th>Question</th><th>Level</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>Compare FPGA vs ASIC. When would you choose each for a product?</td><td>SDE 2</td></tr>
+      <tr><td>2</td><td>Explain timing closure. What do you do when a design doesn't meet timing?</td><td>SDE 3</td></tr>
+      <tr><td>3</td><td>How do you handle clock domain crossings (CDC)? What are the failure modes?</td><td>SDE 3</td></tr>
+      <tr><td>4</td><td>Describe the FPGA design flow from RTL to bitstream.</td><td>SDE 2</td></tr>
+    </tbody>
+  </table>
+
+  <h2 id="dma">DMA & Memory Architecture</h2>
+  <table>
+    <thead><tr><th>#</th><th>Question</th><th>Level</th></tr></thead>
+    <tbody>
+      <tr><td>5</td><td>Explain DMA. Why is it critical for high-bandwidth embedded systems?</td><td>SDE 2</td></tr>
+      <tr><td>6</td><td>How do you handle cache coherency between CPU and DMA in an ARM system?</td><td>SDE 3</td></tr>
+      <tr><td>7</td><td>Explain memory-mapped I/O vs port-mapped I/O. How do you prevent compiler optimization issues?</td><td>SDE 2</td></tr>
+    </tbody>
+  </table>
+
+  <h2 id="rtos">Interrupts & RTOS</h2>
+  <table>
+    <thead><tr><th>#</th><th>Question</th><th>Level</th></tr></thead>
+    <tbody>
+      <tr><td>8</td><td>Explain interrupt latency. How do you minimize it?</td><td>SDE 2-3</td></tr>
+      <tr><td>9</td><td>What is priority inversion? Explain the Mars Pathfinder incident.</td><td>SDE 2-3</td></tr>
+      <tr><td>10</td><td>Design an ISR for a UART receive buffer. What are the constraints?</td><td>SDE 2</td></tr>
+      <tr><td>11</td><td>Compare FreeRTOS vs Zephyr vs Linux RT.</td><td>SDE 2-3</td></tr>
+    </tbody>
+  </table>
+
+  <h2 id="watchdog">Watchdog & Reliability</h2>
+  <table>
+    <thead><tr><th>#</th><th>Question</th><th>Level</th></tr></thead>
+    <tbody>
+      <tr><td>12</td><td>Design a watchdog strategy for a safety-critical embedded system.</td><td>SDE 3</td></tr>
+      <tr><td>13</td><td>Explain the boot sequence for an embedded Linux device.</td><td>SDE 2-3</td></tr>
+    </tbody>
+  </table>
+
+  <h2 id="low-power">Low-Power Design</h2>
+  <table>
+    <thead><tr><th>#</th><th>Question</th><th>Level</th></tr></thead>
+    <tbody>
+      <tr><td>14</td><td>How do you design a battery-powered IoT sensor to last 5 years on a coin cell?</td><td>SDE 3</td></tr>
+      <tr><td>15</td><td>Explain power domains and voltage scaling in modern SoCs.</td><td>SDE 3</td></tr>
+    </tbody>
+  </table>
+</DocsLayout>
