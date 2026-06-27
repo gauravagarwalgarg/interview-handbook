@@ -1,0 +1,128 @@
+/* Custom Interview Bank Styles */
+
+/* === Grid Cards (Home Page) === */
+.grid.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.grid.cards > ul {
+  display: contents;
+  list-style: none;
+  padding: 0;
+}
+
+.grid.cards > ul > li {
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 12px;
+  padding: 1.2rem 1.4rem;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.grid.cards > ul > li:hover {
+  box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+  transform: translateY(-2px);
+}
+
+[data-md-color-scheme="slate"] .grid.cards > ul > li:hover {
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+}
+
+/* === Hero header on home page === */
+.md-typeset h1 {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+/* Make tables more readable */
+.md-typeset table:not([class]) {
+  font-size: 0.82rem;
+  border: 1px solid var(--md-typeset-table-color);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.md-typeset table:not([class]) th {
+  background-color: var(--md-primary-fg-color);
+  color: var(--md-primary-bg-color);
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  letter-spacing: 0.05em;
+}
+
+.md-typeset table:not([class]) tr:nth-child(even) {
+  background-color: var(--md-code-bg-color);
+}
+
+/* Code blocks styling */
+.md-typeset code {
+  border-radius: 4px;
+}
+
+.md-typeset pre > code {
+  border-radius: 8px;
+}
+
+/* Question markers styling */
+.md-typeset h3 code {
+  font-size: 0.9em;
+  padding: 2px 6px;
+}
+
+/* Details/summary (collapsible answers) */
+.md-typeset details {
+  border-radius: 8px;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  margin: 1em 0;
+}
+
+.md-typeset details summary {
+  font-weight: 600;
+  padding: 0.6em 1em;
+  cursor: pointer;
+  background: var(--md-code-bg-color);
+  border-radius: 8px;
+}
+
+.md-typeset details[open] summary {
+  border-bottom: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 8px 8px 0 0;
+}
+
+/* Navigation tabs */
+.md-tabs {
+  background-color: var(--md-primary-fg-color);
+}
+
+/* Footer */
+.md-footer {
+  margin-top: 2rem;
+}
+
+/* Emoji sizing in headings */
+.md-typeset h2 .twemoji,
+.md-typeset h3 .twemoji {
+  height: 1.2em;
+  vertical-align: middle;
+}
+
+/* Responsive table scroll */
+.md-typeset__scrollwrap {
+  border-radius: 8px;
+}
+
+/* Search highlight */
+.md-search-result mark {
+  background-color: var(--md-accent-fg-color);
+  color: var(--md-accent-bg-color);
+  padding: 0 2px;
+  border-radius: 2px;
+}
+
+/* Cards-like feel for sections */
+.md-nav--lifted > .md-nav__list > .md-nav__item--nested {
+  border-radius: 8px;
+}

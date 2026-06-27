@@ -1,0 +1,166 @@
+site_name: Interview Question Bank
+site_description: Comprehensive interview guide DSA, System Design, LLD, HLD, CI/CD across all languages and domains
+site_author: Gaurav Agarwal
+site_url: ""
+
+repo_name: interview
+repo_url: https://github.com/GauravAgarwalGarg/interview
+
+docs_dir: docs
+site_dir: site
+
+theme:
+  name: material
+  logo: https://img.icons8.com/fluency/96/circuit.png
+  favicon: https://img.icons8.com/fluency/32/circuit.png
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: deep purple
+      accent: amber
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: deep purple
+      accent: amber
+      toggle:
+        icon: material/weather-night
+        name: Switch to light mode
+  font:
+    text: Inter
+    code: JetBrains Mono
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.expand
+    - navigation.path
+    - navigation.top
+    - navigation.indexes
+    - navigation.footer
+    - search.suggest
+    - search.highlight
+    - search.share
+    - content.code.copy
+    - content.code.annotate
+    - content.tabs.link
+    - toc.follow
+  icon:
+    repo: fontawesome/brands/github
+    admonition:
+      note: fontawesome/solid/note-sticky
+      tip: fontawesome/solid/lightbulb
+      warning: fontawesome/solid/triangle-exclamation
+      danger: fontawesome/solid/skull-crossbones
+      example: fontawesome/solid/flask
+
+plugins:
+  - search:
+      separator: '[\s\-\.]+'
+  - minify:
+      minify_html: true
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.details
+  - pymdownx.mark
+  - pymdownx.critic
+  - pymdownx.keys
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - admonition
+  - tables
+  - attr_list
+  - md_in_html
+  - def_list
+  - footnotes
+  - toc:
+      permalink: "🔗"
+      toc_depth: 3
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/GauravAgarwalGarg/interview
+      name: GitHub
+  generator: false
+  analytics:
+    provider: null
+
+extra_css:
+  - stylesheets/extra.css
+
+copyright: "&copy; 2024–2026 Interview Bank | Built with MkDocs Material"
+
+nav:
+  - Home: index.md
+  - C++:
+    - Overview: C++/Overview.md
+    - Quick-Fire Questions: C++/QuickFire.md
+    - "🧩 Tricky Output Questions": C++/TrickyOutputQuestions.md
+    - Memory Management: C++/MemoryManagement.md
+    - Concurrency: C++/Concurrency.md
+    - OOP & Design Patterns: C++/OOP_DesignPatterns.md
+    - "🏗️ Design Pattern Scenarios": C++/DesignPatternScenarios.md
+    - "🏛️ System Architecture (Senior)": C++/Architecture.md
+    - Modern C++ (14/17/20): C++/ModernCpp.md
+    - Constrained Environments: C++/ConstrainedEnvironments.md
+    - Build Systems (CMake): C++/BuildSystems_CMake.md
+  - Embedded & Linux:
+    - Overview: EmbeddedSystems/Overview.md
+    - Protocols & Networking: EmbeddedSystems/Protocols_Networking.md
+  - Yocto:
+    - Overview: Yocto/Overview.md
+    - Zynq / ZynqMP: Yocto/Zynq.md
+  - CI/CD & Cloud:
+    - Overview: CICD_Cloud/Overview.md
+    - Quality Gates & Agile: CICD_Cloud/QualityTooling.md
+  - Python:
+    - Overview: Python/Overview.md
+  - Cross-Functional:
+    - Overview: CrossFunctional/Overview.md
+  - "📊 Evaluation":
+    - Metrics Sheet: Metrics/EvaluationSheet.md
+  - DSA:
+    - Overview: DSA/Overview.md
+  - "📋 Rubrics":
+    - Overview: rubrics/README.md
+    - Level Calibration (SDE 1→4): rubrics/level-calibration.md
+    - Coding Round Rubric: rubrics/coding-round.md
+    - LLD Round Rubric: rubrics/lld-round.md
+    - HLD Round Rubric: rubrics/hld-round.md
+    - Infra & CI/CD Rubric: rubrics/infra-cicd-round.md
+    - Feedback Template: rubrics/feedback-template.md
+    - Domain Questions:
+      - Backend & Cloud: rubrics/domain-questions/backend.md
+      - Frontend: rubrics/domain-questions/frontend.md
+      - Networking & OS: rubrics/domain-questions/networking-os.md
+      - Silicon & Embedded: rubrics/domain-questions/silicon-embedded.md
+  - "🎯 Question Banks":
+    - C++ Coding & Output: questions/cpp-coding.md
+    - Python Coding & Output: questions/python-coding.md
+    - Go Coding & Output: questions/golang-coding.md
+    - Java Coding & Output: questions/java-coding.md
+    - C Coding & Output: questions/c-coding.md
+    - DSA Round (25 Problems): questions/dsa-round.md
+    - LLD Problems (25 Designs): questions/lld-problems.md
+    - HLD System Design (25 Systems): questions/hld-system-design.md
+    - CI/CD & DevOps (25 Scripts): questions/cicd-devops.md
+    - Architecture & Design (25 Trade-offs): questions/architecture-design.md
