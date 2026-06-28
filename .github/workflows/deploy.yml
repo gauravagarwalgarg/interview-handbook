@@ -1,12 +1,8 @@
-name: Deploy MkDocs to GitHub Pages
+name: Deploy to GitHub Pages
 
 on:
   push:
     branches: [main]
-    paths:
-      - 'docs/**'
-      - 'mkdocs.yml'
-      - '.github/workflows/deploy.yml'
   workflow_dispatch:
 
 permissions:
@@ -24,19 +20,23 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-node@v4
         with:
-          python-version: '3.12'
+          node-version: 22
+          cache: npm
+          cache-dependency-path: website/package-lock.json
 
       - name: Install dependencies
-        run: pip install mkdocs mkdocs-material pymdown-extensions mkdocs-minify-plugin
+        working-directory: website
+        run: npm ci
 
-      - name: Build documentation
-        run: mkdocs build --strict
+      - name: Build Astro site
+        working-directory: website
+        run: npm run build
 
-      - uses: actions/upload-pages-artifact@v3
+      - uses: actions/upload-pages-artifact@v4
         with:
-          path: 'site/'
+          path: website/dist/
 
   deploy:
     needs: build
