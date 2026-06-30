@@ -1,5 +1,12 @@
 # Interview Question Bank
 
+[![CI](https://github.com/gauravagarwalgarg/tech-interview-os/actions/workflows/ci.yml/badge.svg)](https://github.com/gauravagarwalgarg/tech-interview-os/actions/workflows/ci.yml) [![Docs](https://img.shields.io/badge/docs-live-blue?logo=github)](https://gauravagarwalgarg.github.io/tech-interview-os/) ![Astro](https://img.shields.io/badge/Astro-Framework-purple?logo=astro&logoColor=white) [![License](https://img.shields.io/github/license/gauravagarwalgarg/tech-interview-os)](https://github.com/gauravagarwalgarg/tech-interview-os/blob/main/LICENSE)
+
+> 📖 **Documentation**: [https://gauravagarwalgarg.github.io/tech-interview-os/](https://gauravagarwalgarg.github.io/tech-interview-os/)
+>
+> 📦 **Repository**: [GitHub](https://github.com/gauravagarwalgarg/tech-interview-os)
+
+
 **Embedded Systems | Linux Kernel | C++ | Yocto | Python**
 
 A comprehensive, production-oriented interview question bank for roles requiring a blend of C++, Embedded Systems, Linux, Yocto Project, and Python scripting. Designed for 60-minute technical rounds with a focus on real-world engineering challenges.
